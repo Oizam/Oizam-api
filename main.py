@@ -26,6 +26,7 @@ app = FastAPI(
 templates = Jinja2Templates(directory="./code/App/templates")
 
 
+
 @app.get('/' , response_class=HTMLResponse)
 async def depart(request: Request):
     """_summary_
