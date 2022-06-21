@@ -1,13 +1,13 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, status, HTTPException, Request
 from sqlalchemy.orm import Session, joinedload
 from fastapi.params import Depends
 from tensorflow import keras
 from App.database import get_db
-from .. import models
+from .. import schemas, models
 import pandas as pd
 
 bird_dex = pd.read_csv("App/data/OiseauxFini.csv")
-model = keras.models.load_model('App/data/model.h5')
+model = keras.models.load_model('App/data/complete_modelFR.h5')
 
 router = APIRouter(tags=['predict'], prefix="/predict")
 
@@ -18,7 +18,6 @@ async def get_prediction(request : Request, db: Session = Depends(get_db)):
     mat = await request.json()
     mat = eval(mat)
     predict = model.predict(mat['Image'])
-    predict = predict.argmax() + 1
+    predict = int(predict.argmax() + 201) 
     bird = db.query(models.Bird).filter(models.Bird.id == predict).first()
-
-    return({"result" : bird})
+    return(bird)
