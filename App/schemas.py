@@ -1,8 +1,7 @@
 from dataclasses import Field
 import logging as lg
-from msilib import schema
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import List
 from fastapi_jwt_auth import AuthJWT
 
 class Settings(BaseModel):
