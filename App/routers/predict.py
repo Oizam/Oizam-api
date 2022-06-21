@@ -5,6 +5,7 @@ from fastapi.params import Depends
 from tensorflow import keras
 from App.database import get_db
 from .. import schemas, models
+import pandas as pd
 
 bird_dex = pd.read_csv("/code/app/dict_liste_oiseaux.csv")
 model = keras.models.load_model('App/data/model.h5')
