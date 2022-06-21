@@ -23,7 +23,7 @@ app = FastAPI(
     }
 )
 
-templates = Jinja2Templates(directory="App/templates")
+templates = Jinja2Templates(directory="./code/App/templates")
 
 
 @app.get('/' , response_class=HTMLResponse)
@@ -45,7 +45,7 @@ lg.info('Database created!')
 models.Base.metadata.create_all(engine)
 
 lg.info('Database import bird')
-data = pd.read_csv ('code\App\data\OiseauxFini.csv')   
+data = pd.read_csv ('.\code\App\data\OiseauxFini.csv')   
 df = pd.DataFrame(data)
 df.to_sql('birds', con = engine, if_exists='append', index=False)
 
