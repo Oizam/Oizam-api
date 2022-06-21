@@ -68,14 +68,5 @@ class BirdSchema(Bird):
 class UserSchema(DisplayUsers):
     birds : List[Bird]
     
-    
-class Token(BaseModel):
-    access_token : str
-    token_type : str
-    
-    
-class TokenData(BaseModel):
-    email : str | None = None
-    
 class UserInDB(Users):
     hashed_password: str
