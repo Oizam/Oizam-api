@@ -1,11 +1,9 @@
 from fastapi import FastAPI, Request
 from App import models
-from App.database import engine, get_db
+from App.database import engine
 from App.routers import birds, users, login, predict
 from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from passlib.context import CryptContext
 import pandas as pd
 import logging as lg
 import uvicorn
@@ -47,7 +45,7 @@ lg.info('Database created!')
 models.Base.metadata.create_all(engine)
 
 lg.info('Database import bird')
-data = pd.read_csv ('App\data\OiseauxFini.csv')   
+data = pd.read_csv ('code\App\data\OiseauxFini.csv')   
 df = pd.DataFrame(data)
 df.to_sql('birds', con = engine, if_exists='append', index=False)
 
@@ -56,7 +54,7 @@ lg.info('Database import users!')
 lg.info('Database initialized!')
 
 if __name__ == "__main__":
-    uvicorn.run("__main__:app", host="127.0.0.1", port=int(os.environ.get("PORT", 5000)))
+    uvicorn.run("__main__:app", host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
 
 
