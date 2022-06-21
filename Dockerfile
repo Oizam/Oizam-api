@@ -8,7 +8,7 @@ COPY ./main.py /code/main.py
 
 RUN pip install -r /code/requirements.txt
 
-COPY ./ /code/
+COPY ./App /code/App
 
 ENTRYPOINT [ "python" ]
 
