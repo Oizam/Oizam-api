@@ -47,3 +47,5 @@ class birds_users(Base):
     bird_id = Column(Integer, ForeignKey('birds.id'), primary_key=True)
     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
     
+
+    
