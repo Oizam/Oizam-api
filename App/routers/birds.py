@@ -1,7 +1,5 @@
-from locale import currency
 from fastapi import APIRouter, status, HTTPException
-# from App.routers.login import get_current_user
-from sqlalchemy.orm import Session, joinedload
+from sqlalchemy.orm import Session
 from fastapi.params import Depends
 from fastapi_jwt_auth import AuthJWT
 from App.database import get_db

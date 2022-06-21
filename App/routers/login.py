@@ -1,20 +1,11 @@
-from tokenize import Token
 from fastapi import APIRouter, status, HTTPException
-
-from sqlalchemy.orm import Session, joinedload
+from sqlalchemy.orm import Session
 from fastapi.params import Depends
 from App.database import get_db
 from App import schemas, models
 from passlib.context import CryptContext
-import os
 from dotenv import load_dotenv
 from fastapi_jwt_auth import AuthJWT
-load_dotenv(override=True)
-
-
-SECRET_KEY = os.getenv("SECRET_KEY")
-ALGORITHM = os.getenv("ALGORITHM")
-ACCESS_TOKEN_EXPIRE_MINUTES = 20
 
 router = APIRouter(tags=['Login'], prefix="/login")
 
@@ -33,8 +24,6 @@ def create_user(request : schemas.Users, db: Session = Depends(get_db)):
     db.refresh(new_User)
     return new_User
 
-
-
 @router.post('/login')
 def login(user: schemas.UserLogin, Authorize:AuthJWT=Depends(), db: Session = Depends(get_db)):
     user_connected = db.query(models.Users).filter(models.Users.email == user.email).first()
@@ -45,22 +34,4 @@ def login(user: schemas.UserLogin, Authorize:AuthJWT=Depends(), db: Session = De
     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Email not found / invalid user')
 
 
-
-    
-# def get_current_user(token:str = Depends(oauth2_scheme)):
-#     credentials_exception = HTTPException(
-#         status_code=status.HTTP_401_UNAUTHORIZED,
-#         detail="Invalid auth credentials",
-#         headers={"WWW-Authenticate": "Bearer"}
-#     )
-#     try:
-#         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-#         email: str = payload.get('sub')
-#         if email is None:
-#             raise credentials_exception
-#         token_data = TokenData(email=email)
-        
-#     except JWTError:
-#         raise credentials_exception
-#     return token_data
     

@@ -1,9 +1,9 @@
-from fastapi import APIRouter, status, HTTPException, Request
+from fastapi import APIRouter, Request
 from sqlalchemy.orm import Session, joinedload
 from fastapi.params import Depends
 from tensorflow import keras
 from App.database import get_db
-from .. import schemas, models
+from .. import models
 import pandas as pd
 
 bird_dex = pd.read_csv("App/data/OiseauxFini.csv")

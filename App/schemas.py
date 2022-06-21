@@ -1,8 +1,7 @@
 from dataclasses import Field
 import logging as lg
-from msilib import schema
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import List
 from fastapi_jwt_auth import AuthJWT
 
 class Settings(BaseModel):
@@ -68,15 +67,6 @@ class BirdSchema(Bird):
     
 class UserSchema(DisplayUsers):
     birds : List[Bird]
-    
-    
-class Token(BaseModel):
-    access_token : str
-    token_type : str
-    
-    
-class TokenData(BaseModel):
-    email : str | None = None
     
 class UserInDB(Users):
     hashed_password: str
