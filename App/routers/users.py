@@ -53,7 +53,7 @@ def update_user(id, request : schemas.Users, db: Session = Depends(get_db)):
     """_summary_
        Update a json with one user 
     """
-    user = db.query(models.Bird).filter(models.Bird.id == id)
+    user = db.query(models.Users).filter(models.Users.id == id)
     if not user.first():
         pass
     if not user:
