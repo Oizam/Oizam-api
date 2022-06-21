@@ -25,7 +25,6 @@ app = FastAPI(
     }
 )
 
-
 templates = Jinja2Templates(directory="App/templates")
 
 
@@ -36,17 +35,12 @@ async def depart(request: Request):
     """
     return templates.TemplateResponse("index.html", {'some_object':"some_object", 'request':request})
 
-
-@app.get('/coco')
-def home():
-    return({"Bienvenue" : "bienvenue"})
-
 app.include_router(birds.router)
 app.include_router(users.router)
 app.include_router(login.router)
 app.include_router(predict.router)
 
-# def init_db():
+
 lg.info('Database destoy')
 models.Base.metadata.drop_all(engine)
 lg.info('Database created!')
@@ -58,21 +52,11 @@ df = pd.DataFrame(data)
 df.to_sql('birds', con = engine, if_exists='append', index=False)
 
 lg.info('Database import users!')
-# pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-# for i in range(1,11):
-#     hashed_password = pwd_context.hash("123")
-#     new_User = models.Users(first_name='toto' + str(i), last_name='toto' + str(i), username='toto' + str(i), email='toto' + str(i) + "@gmail.com", hashed_password=hashed_password, password_lost="request.password_lost",
-#                         admin="True")
-#     lg.info(f'Users : {new_User}')
-#     db = get_db
-#     db.add(new_User)
-#     db.commit()
-#     db.refresh(new_User)
+
 lg.info('Database initialized!')
 
 if __name__ == "__main__":
     uvicorn.run("__main__:app", host="127.0.0.1", port=int(os.environ.get("PORT", 5000)))
-    # init_db()
 
 
 
