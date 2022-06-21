@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from App import models
 from App.database import engine, get_db
-from App.routers import birds, users, login
+from App.routers import birds, users, login, predict
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -44,7 +44,7 @@ def home():
 app.include_router(birds.router)
 app.include_router(users.router)
 app.include_router(login.router)
-
+app.include_router(predict.router)
 
 # def init_db():
 lg.info('Database destoy')
@@ -53,7 +53,7 @@ lg.info('Database created!')
 models.Base.metadata.create_all(engine)
 
 lg.info('Database import bird')
-data = pd.read_csv ('Oizam\App\data\OiseauxFini.csv')   
+data = pd.read_csv ('App\data\OiseauxFini.csv')   
 df = pd.DataFrame(data)
 df.to_sql('birds', con = engine, if_exists='append', index=False)
 

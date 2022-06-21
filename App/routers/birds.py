@@ -1,8 +1,9 @@
+from locale import currency
 from fastapi import APIRouter, status, HTTPException
-from App.routers.login import get_current_user
+# from App.routers.login import get_current_user
 from sqlalchemy.orm import Session, joinedload
 from fastapi.params import Depends
-
+from fastapi_jwt_auth import AuthJWT
 from App.database import get_db
 from .. import schemas, models
 
@@ -10,14 +11,20 @@ from .. import schemas, models
 router = APIRouter(tags=['Birds'], prefix="/bird")
 
 @router.delete('/{id}')
-def bird_delete(id, db: Session = Depends(get_db)):
+def bird_delete_id(id, Authorize:AuthJWT=Depends(), db: Session = Depends(get_db)):
+    try:
+        Authorize.jwt_required()
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid Token")
+    
+    current_user=Authorize.get_jwt_subject()
     db.query(models.Bird).filter(models.Bird.id == id).delete(synchronize_session=False)
     db.commit()
-    return {'Bird Deleted'}
+    return {'Birds deleteds': id}
     
 
 @router.get('/')
-async def get_all_bird(db: Session = Depends(get_db), current_user: schemas.Users = Depends(get_current_user)):
+async def get_all_bird(db: Session = Depends(get_db)):
     """_summary_
        Get a json with all bird 
     """
