@@ -6,8 +6,8 @@ from App.database import get_db
 from .. import models
 import pandas as pd
 
-bird_dex = pd.read_csv("App/data/OiseauxFini.csv")
-model = keras.models.load_model('App/data/model.h5')
+bird_dex = pd.read_csv("code/App/data/OiseauxFini.csv")
+model = keras.models.load_model('code/App/data/model.h5')
 
 router = APIRouter(tags=['predict'], prefix="/predict")
 

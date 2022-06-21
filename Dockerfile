@@ -6,7 +6,7 @@ COPY ./requirements.txt /code/requirements.txt
 
 COPY ./main.py /code/main.py
 
-COPY ./App /code/App
+COPY ./app /code/app
 
 RUN pip install -r /code/requirements.txt
 
