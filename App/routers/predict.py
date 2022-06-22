@@ -21,3 +21,4 @@ async def get_prediction(request : Request, db: Session = Depends(get_db)):
     predict = int(predict.argmax() + 201) 
     bird = db.query(models.Bird).filter(models.Bird.id == predict).first()
     return(bird)
+
