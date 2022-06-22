@@ -7,7 +7,8 @@ The purpose of this **API** is to be us with ***Oizam-Kivy*** (Is an application
 
 Inide we have a file is call OiseauxFini.csv, is't our database we upload our postgreSQL databate, We use the data from [oiseaux.net](https://www.oiseaux.net/)
 
-## instructions for launching it locally
+
+# instructions for launching it locally
 
 In your favorite IDE, 
 
@@ -23,9 +24,20 @@ In your favorite IDE,
 
     pip install --upgrade pip
     
- 4°) Intall all package necessary
+ 4°) Install all package necessary
 
     pip install -r requirements.txt
 
-5°) Before to start the application, you must change the 
-DATABASE_URL = "<span style="color:red">YOUR_DATABASE_URL</span>"*** in file ***.env
+5°) Before to start the application, you must change the ***DATABASE_URL = "==YOUR_DATABASE_URL=="*** in file ***.env***, you must replace you ***==YOUR_DATABASE_URL==*** by the postgres URI
+
+6°) And to finish you just start,
+
+    python main.py
+
+The database will be create and imported automatically
+
+if you dont want to Oizam-kivy, you use swagger and knows the route by this adress :
+
+    http://127.0.0.1:5000/docs
+
+ This programs is develops with our heart and a good team
