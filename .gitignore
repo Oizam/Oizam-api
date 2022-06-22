@@ -3,5 +3,5 @@ images_FR/
 Roadmap.docx
 myenv/
 __pycache__
-.env
+.env_var
 App\static\model
