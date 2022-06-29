@@ -23,7 +23,7 @@ app = FastAPI(
     }
 )
 
-templates = Jinja2Templates(directory="./code/App/templates")
+templates = Jinja2Templates(directory="./App/templates")
 
 
 
@@ -37,7 +37,7 @@ async def depart(request: Request):
 app.include_router(birds.router)
 app.include_router(users.router)
 app.include_router(login.router)
-app.include_router(predict.router)
+# app.include_router(predict.router)
 
 
 lg.info('Database destoy')
