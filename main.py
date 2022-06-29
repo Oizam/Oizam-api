@@ -46,10 +46,10 @@ app.include_router(login.router)
 # models.Base.metadata.create_all(engine)
 # lg.info('Database created')
 
-lg.info('Database import bird')
-data = pd.read_csv ('App/data/OiseauxFini.csv')   
-df = pd.DataFrame(data)
-df.to_sql('birds', con = engine, if_exists='append', index=False)
+# lg.info('Database import bird')
+# data = pd.read_csv ('App/data/OiseauxFini.csv')   
+# df = pd.DataFrame(data)
+# df.to_sql('birds', con = engine, if_exists='append', index=False)
 
 lg.info('Database import users!')
 
