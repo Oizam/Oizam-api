@@ -16,6 +16,13 @@ def create_user(request : schemas.Users, db: Session = Depends(get_db)):
     """_summary_
        Save a json with one user 
     """
+    user = db.query(models.Users).filter(models.Users.email == request.email).first()
+    
+    if user:
+        print(user)
+        print("user exist deja")
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Email existing already') 
+    
     # hashed_password = pwd_context.hash(request.hashed_password)
     new_User = models.Users(first_name=request.first_name, last_name=request.last_name, username=request.username, 
                             email=request.email, hashed_password=request.hashed_password, password_lost=request.password_lost, admin=request.admin)
