@@ -1,3 +1,4 @@
+from enum import unique
 import logging as lg
 from typing import List
 from sqlalchemy import Column, Integer, String, ForeignKey, Table
@@ -35,7 +36,7 @@ class Users(Base):
     first_name = Column(String)
     last_name = Column(String)
     username = Column(String)
-    email = Column(String)
+    email = Column(String, unique=True)
     hashed_password = Column(String)
     password_lost = Column(String)
     admin = Column(String)
