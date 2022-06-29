@@ -40,11 +40,11 @@ app.include_router(login.router)
 # app.include_router(predict.router)
 
 
-lg.info('Database destoy')
-models.Base.metadata.drop_all(engine)
-lg.info('Database start to create!')
-models.Base.metadata.create_all(engine)
-lg.info('Database created')
+# lg.info('Database destoy')
+# models.Base.metadata.drop_all(engine)
+# lg.info('Database start to create!')
+# models.Base.metadata.create_all(engine)
+# lg.info('Database created')
 
 lg.info('Database import bird')
 data = pd.read_csv ('App/data/OiseauxFini.csv')   
