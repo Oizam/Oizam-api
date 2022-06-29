@@ -55,7 +55,7 @@ lg.info('Database import users!')
 lg.info('Database initialized!')
 
 if __name__ == "__main__":
-    uvicorn.run("__main__:app")
+    uvicorn.run("main:app")
 
 
 
