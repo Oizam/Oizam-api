@@ -37,7 +37,7 @@ def login(user: schemas.UserLogin, Authorize:AuthJWT=Depends(), db: Session = De
     if (user_connected.email==user.email) and (user_connected.hashed_password==user.hashed_password):
         access_token= Authorize.create_access_token(subject=user.email)
         refresh_token = Authorize.create_refresh_token(subject=user.email)
-        return {"access token" : access_token, "refresh_token" : refresh_token}    
+        return {"access token" : access_token, "refresh_token" : refresh_token, "user_connected" : user_connected.id}    
     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Email not found / invalid user')
 
 
