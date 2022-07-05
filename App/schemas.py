@@ -3,6 +3,7 @@ import logging as lg
 from pydantic import BaseModel, Field
 from typing import List
 from fastapi_jwt_auth import AuthJWT
+from sqlalchemy import Integer
 
 class Settings(BaseModel):
     authjwt_secret_key :str = 'bbf7959edfdc5fa450632afd936e45782be6f5aae8a0ed2ae9cb6c4a34735f56'
@@ -70,3 +71,8 @@ class UserSchema(DisplayUsers):
     
 class UserInDB(Users):
     hashed_password: str
+    
+    
+class birds_users(BaseModel):
+    bird_id : int
+    user_id : int

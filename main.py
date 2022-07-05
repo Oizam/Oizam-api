@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from App import models
 from App.database import engine
-from App.routers import birds, users, login, predict
+from App.routers import birds, users, login, predict, oiseauxdex
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 import pandas as pd
@@ -37,6 +37,7 @@ async def depart(request: Request):
 app.include_router(birds.router)
 app.include_router(users.router)
 app.include_router(login.router)
+app.include_router(oiseauxdex.router)
 # app.include_router(predict.router)
 
 
