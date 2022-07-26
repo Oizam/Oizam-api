@@ -16,7 +16,7 @@ async def get_all_bird(db: Session = Depends(get_db)):
     birds_users = db.query(models.birds_users).all()
     return birds_users
 
-@router.get('List/{id}')
+@router.get('/List/{id}')
 async def get_one_user(id, db: Session = Depends(get_db)):
     """_summary_
        Get a json with one user 
