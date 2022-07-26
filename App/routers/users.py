@@ -27,7 +27,7 @@ async def get_all_user(db: Session = Depends(get_db)):
     return users
 
 
-@router.get('/{id}}')
+@router.get('/{id}')
 async def get_one_user(id, db: Session = Depends(get_db)):
     """_summary_
        Get a json with one user 
@@ -37,7 +37,7 @@ async def get_one_user(id, db: Session = Depends(get_db)):
         raise HTTPException(status.HTTP_404_NOT_FOUND, detail='User not found')
     return user
 
-@router.get('/get_user_view/{id}}', response_model=schemas.UserSchema)
+@router.get('/get_user_view/{id}', response_model=schemas.UserSchema)
 async def get_one_user_view(id, db: Session = Depends(get_db)):
     """_summary_
        Get a json with one user 

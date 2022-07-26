@@ -1,0 +1,83 @@
+[2022-07-04 08:46:58]: 2636 WARNING Failed to integrate module: opencensus.ext.logging.trace
+[2022-07-04 08:46:58]: 2636 WARNING No module named 'opencensus.ext.logging'
+[2022-07-04 08:46:58]: 2636 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:46:58]: 2636 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:46:58]: 2636 DEBUG Starting new HTTP connection (1): 169.254.169.254:80
+[2022-07-04 08:46:58]: 2636 DEBUG Starting new HTTPS connection (1): westus-0.in.applicationinsights.azure.com:443
+[2022-07-04 08:46:59]: 2636 DEBUG https://westus-0.in.applicationinsights.azure.com:443 "POST //v2.1/track HTTP/1.1" 200 49
+[2022-07-04 08:46:59]: 2636 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:46:59]: 2636 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:46:59]: 2636 INFO Starting app in Dev environment
+[2022-07-04 08:47:00]: 2636 WARNING Database initialized!
+[2022-07-04 08:47:00]: 2636 INFO  * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.17.9.20:8000 (Press CTRL+C to quit)
+[2022-07-04 08:47:00]: 2636 INFO  * Restarting with stat
+[2022-07-04 08:47:01]: 5048 WARNING Failed to integrate module: opencensus.ext.logging.trace
+[2022-07-04 08:47:01]: 5048 WARNING No module named 'opencensus.ext.logging'
+[2022-07-04 08:47:01]: 5048 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:01]: 5048 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:01]: 5048 DEBUG Starting new HTTP connection (1): 169.254.169.254:80
+[2022-07-04 08:47:01]: 5048 DEBUG Starting new HTTPS connection (1): westus-0.in.applicationinsights.azure.com:443
+[2022-07-04 08:47:02]: 5048 DEBUG https://westus-0.in.applicationinsights.azure.com:443 "POST //v2.1/track HTTP/1.1" 200 49
+[2022-07-04 08:47:02]: 5048 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:02]: 5048 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:02]: 5048 INFO Starting app in Dev environment
+[2022-07-04 08:47:02]: 5048 WARNING Database initialized!
+[2022-07-04 08:47:02]: 5048 WARNING  * Debugger is active!
+[2022-07-04 08:47:02]: 5048 INFO  * Debugger PIN: 236-355-132
+[2022-07-04 08:47:03]: 5048 WARNING Before the span
+[2022-07-04 08:47:04]: 5048 WARNING In the span
+[2022-07-04 08:47:04]: 5048 WARNING After the span
+[2022-07-04 08:47:04]: 5048 INFO 127.0.0.1 - - [04/Jul/2022 08:47:04] "GET / HTTP/1.1" 200 -
+[2022-07-04 08:47:04]: 5048 INFO 127.0.0.1 - - [04/Jul/2022 08:47:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2022-07-04 08:47:13]: 2636 DEBUG Starting new HTTPS connection (1): dc.services.visualstudio.com:443
+[2022-07-04 08:47:13]: 2636 DEBUG https://dc.services.visualstudio.com:443 "POST /v2.1/track HTTP/1.1" 307 224
+[2022-07-04 08:47:13]: 2636 DEBUG Starting new HTTPS connection (1): francecentral-1.in.applicationinsights.azure.com:443
+[2022-07-04 08:47:15]: 2636 DEBUG https://francecentral-1.in.applicationinsights.azure.com:443 "POST /v2.1/track HTTP/1.1" 200 49
+[2022-07-04 08:47:16]: 5048 DEBUG Starting new HTTPS connection (1): dc.services.visualstudio.com:443
+[2022-07-04 08:47:16]: 5048 DEBUG Starting new HTTPS connection (1): dc.services.visualstudio.com:443
+[2022-07-04 08:47:16]: 5048 DEBUG https://dc.services.visualstudio.com:443 "POST /v2.1/track HTTP/1.1" 307 224
+[2022-07-04 08:47:16]: 5048 DEBUG Starting new HTTPS connection (1): francecentral-1.in.applicationinsights.azure.com:443
+[2022-07-04 08:47:16]: 5048 DEBUG https://francecentral-1.in.applicationinsights.azure.com:443 "POST /v2.1/track HTTP/1.1" 200 49
+[2022-07-04 08:47:16]: 5048 DEBUG https://dc.services.visualstudio.com:443 "POST /v2.1/track HTTP/1.1" 307 752
+[2022-07-04 08:47:16]: 5048 DEBUG Starting new HTTPS connection (1): francecentral-1.in.applicationinsights.azure.com:443
+[2022-07-04 08:47:16]: 5048 DEBUG https://francecentral-1.in.applicationinsights.azure.com:443 "POST /v2.1/track HTTP/1.1" 200 49
+[2022-07-04 08:47:46]: 21948 WARNING Failed to integrate module: opencensus.ext.logging.trace
+[2022-07-04 08:47:46]: 21948 WARNING No module named 'opencensus.ext.logging'
+[2022-07-04 08:47:46]: 21948 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:46]: 21948 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:46]: 21948 DEBUG Starting new HTTP connection (1): 169.254.169.254:80
+[2022-07-04 08:47:46]: 21948 DEBUG Starting new HTTPS connection (1): westus-0.in.applicationinsights.azure.com:443
+[2022-07-04 08:47:47]: 21948 DEBUG https://westus-0.in.applicationinsights.azure.com:443 "POST //v2.1/track HTTP/1.1" 200 49
+[2022-07-04 08:47:47]: 21948 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:47]: 21948 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:47]: 21948 INFO Starting app in Dev environment
+[2022-07-04 08:47:47]: 21948 WARNING Database initialized!
+[2022-07-04 08:47:48]: 21948 INFO  * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.17.9.20:8000 (Press CTRL+C to quit)
+[2022-07-04 08:47:48]: 21948 INFO  * Restarting with stat
+[2022-07-04 08:47:49]: 25320 WARNING Failed to integrate module: opencensus.ext.logging.trace
+[2022-07-04 08:47:49]: 25320 WARNING No module named 'opencensus.ext.logging'
+[2022-07-04 08:47:49]: 25320 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:49]: 25320 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:49]: 25320 DEBUG Starting new HTTP connection (1): 169.254.169.254:80
+[2022-07-04 08:47:49]: 25320 DEBUG Starting new HTTPS connection (1): westus-0.in.applicationinsights.azure.com:443
+[2022-07-04 08:47:49]: 25320 DEBUG https://westus-0.in.applicationinsights.azure.com:443 "POST //v2.1/track HTTP/1.1" 200 49
+[2022-07-04 08:47:49]: 25320 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:49]: 25320 WARNING DeprecationWarning: Explicitly using instrumentation key isdeprecated. Please use a connection string instead.
+[2022-07-04 08:47:49]: 25320 INFO Starting app in Dev environment
+[2022-07-04 08:47:49]: 25320 WARNING Database initialized!
+[2022-07-04 08:47:49]: 25320 WARNING  * Debugger is active!
+[2022-07-04 08:47:49]: 25320 INFO  * Debugger PIN: 236-355-132
+[2022-07-04 08:47:52]: 25320 DEBUG Starting new HTTPS connection (1): dc.services.visualstudio.com:443
+[2022-07-04 08:47:53]: 25320 DEBUG https://dc.services.visualstudio.com:443 "POST /v2.1/track HTTP/1.1" 307 224
+[2022-07-04 08:47:53]: 25320 DEBUG Starting new HTTPS connection (1): francecentral-1.in.applicationinsights.azure.com:443
+[2022-07-04 08:47:54]: 25320 DEBUG https://francecentral-1.in.applicationinsights.azure.com:443 "POST /v2.1/track HTTP/1.1" 200 49
+[2022-07-04 08:47:55]: 21948 DEBUG Starting new HTTPS connection (1): dc.services.visualstudio.com:443
+[2022-07-04 08:47:55]: 21948 DEBUG https://dc.services.visualstudio.com:443 "POST /v2.1/track HTTP/1.1" 307 224
+[2022-07-04 08:47:55]: 21948 DEBUG Starting new HTTPS connection (1): francecentral-1.in.applicationinsights.azure.com:443
+[2022-07-04 08:47:55]: 21948 DEBUG https://francecentral-1.in.applicationinsights.azure.com:443 "POST /v2.1/track HTTP/1.1" 200 49

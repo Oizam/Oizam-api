@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from App import models
 from App.database import engine
-from App.routers import birds, users, login, predict
+from App.routers import birds, users, login, predict, oiseauxdex
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 import pandas as pd
@@ -37,19 +37,20 @@ async def depart(request: Request):
 app.include_router(birds.router)
 app.include_router(users.router)
 app.include_router(login.router)
+app.include_router(oiseauxdex.router)
 # app.include_router(predict.router)
 
 
-lg.info('Database destoy')
-models.Base.metadata.drop_all(engine)
-lg.info('Database start to create!')
-models.Base.metadata.create_all(engine)
-lg.info('Database created')
+# lg.info('Database destoy')
+# models.Base.metadata.drop_all(engine)
+# lg.info('Database start to create!')
+# models.Base.metadata.create_all(engine)
+# lg.info('Database created')
 
-lg.info('Database import bird')
-data = pd.read_csv ('App/data/OiseauxFini.csv')   
-df = pd.DataFrame(data)
-df.to_sql('birds', con = engine, if_exists='append', index=False)
+# lg.info('Database import bird')
+# data = pd.read_csv ('App/data/OiseauxFini.csv')   
+# df = pd.DataFrame(data)
+# df.to_sql('birds', con = engine, if_exists='append', index=False)
 
 lg.info('Database import users!')
 
