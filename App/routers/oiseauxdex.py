@@ -24,7 +24,7 @@ async def get_one_user(id, db: Session = Depends(get_db)):
     birds_users = db.query(models.Users).options(joinedload(models.Users.birds)).filter(models.Users.id == id).all()
     if not birds_users:
         raise HTTPException(status.HTTP_404_NOT_FOUND, detail='User not found')
-    return "{'list' :{birds_users}}"
+    return {'list' : birds_users}
 
 @router.get('/{id}')
 async def get_one_user(id, db: Session = Depends(get_db)):
